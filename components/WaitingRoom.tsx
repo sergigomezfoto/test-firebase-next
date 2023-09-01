@@ -44,7 +44,7 @@ const WaitingRoom: React.FC<WaitingRoomProps> = ({ sala }) => {
       <div className="flex flex-wrap max-w-md justify-center gap-4">
         {players.map((player, index) => (
           <div key={index} className="flex flex-col items-center space-y-2">
-            <Image src={player.avatar} alt={player.name} width={16} height={16} className="rounded-full w-16 h-16" />
+            <img src={player.avatar} alt={player.name}  className="rounded-full w-16 h-16" />
             <span className="text-lg">{player.name}</span>
           </div>
         ))}

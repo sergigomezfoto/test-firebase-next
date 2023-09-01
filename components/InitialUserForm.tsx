@@ -45,7 +45,7 @@ const InitialUserForm: React.FC<InitialUserFormProps> = ({ sala, onJoin }) => {
 
   return (
     <div className="flex flex-col items-center space-y-4">
-      {imageUrl ? <Image src={imageUrl} alt="Imatge aleatòria" width={64} height={64} className="rounded-full" /> : <p>Carregant imatge...</p>}
+      {imageUrl ? <img src={imageUrl} alt="Imatge aleatòria"  className="rounded-full" /> : <p>Carregant imatge...</p>}
       <input
         type="text"
         value={username}
