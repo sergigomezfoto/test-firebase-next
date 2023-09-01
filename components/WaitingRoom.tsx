@@ -5,6 +5,7 @@ import { collection, onSnapshot,doc } from 'firebase/firestore';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import useCloseRoomAfterTimeout from '@/hooks/useCloseRoomAfterTimeout';
+import Image from 'next/image';
 interface WaitingRoomProps {
   sala: string;
 }
@@ -39,11 +40,11 @@ const WaitingRoom: React.FC<WaitingRoomProps> = ({ sala }) => {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center space-y-4 bg-gray-100 p-8">
-      <h2 className="text-2xl font-bold mb-4">Sala d'espera</h2>
+      <h2 className="text-2xl font-bold mb-4">Sala d&apos;espera</h2>
       <div className="flex flex-wrap max-w-md justify-center gap-4">
         {players.map((player, index) => (
           <div key={index} className="flex flex-col items-center space-y-2">
-            <img src={player.avatar} alt={player.name} className="rounded-full w-16 h-16" />
+            <Image src={player.avatar} alt={player.name} width={16} height={16} className="rounded-full w-16 h-16" />
             <span className="text-lg">{player.name}</span>
           </div>
         ))}

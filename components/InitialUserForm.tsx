@@ -1,7 +1,8 @@
 'use client'
 
 import { db } from '@/firebase/firebase';
-import { doc, setDoc, collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 interface InitialUserFormProps {
@@ -44,7 +45,7 @@ const InitialUserForm: React.FC<InitialUserFormProps> = ({ sala, onJoin }) => {
 
   return (
     <div className="flex flex-col items-center space-y-4">
-      {imageUrl ? <img src={imageUrl} alt="Imatge aleatòria" className="rounded-full" /> : <p>Carregant imatge...</p>}
+      {imageUrl ? <Image src={imageUrl} alt="Imatge aleatòria" width={64} height={64} className="rounded-full" /> : <p>Carregant imatge...</p>}
       <input
         type="text"
         value={username}
